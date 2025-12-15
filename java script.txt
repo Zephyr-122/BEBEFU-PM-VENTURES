@@ -1,0 +1,33 @@
+function showMessage() {
+    alert(
+        "Bebefu Ventures exports high-quality maize from Ghana to international markets."
+    );
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const fullName = form.fullname.value;
+        const email = form.email.value;
+        const phone = form.phone.value;
+        const location = form.location.value;
+        const payment = form.payment.value;
+
+        if (
+            fullName === "" ||
+            email === "" ||
+            phone === "" ||
+            location === "" ||
+            payment === ""
+        ) {
+            alert("Please fill all fields");
+            return;
+        }
+
+        alert("Thank you, " + fullName + ". We will contact you soon.");
+        form.reset();
+    });
+});
